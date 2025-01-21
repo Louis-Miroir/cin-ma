@@ -42,7 +42,6 @@ header p {
 nav {
     background-color: #222;
     padding: 10px 20px;
-    height: 50px;
 }
 
 nav ul {
@@ -70,12 +69,10 @@ body {
 
 
 .films {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    margin: 20px 0;
-    padding-left: 15%;
-    padding-right: 15%;
+    justify-content: center;
 }
 
 @media (max-width: 1000px) {
@@ -86,22 +83,44 @@ body {
 
 .film1,.film2,.film3 {
 
-    width: 100%;
-    height:500px
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px; 
+    margin: 10px;
     
 
 
 }
+.film {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 10px;
+}
 
-
-
-#nomfilm1,#nomfilm2,#nomfilm3 {
-   font-size: 1.9vw;
+@media (max-width: 600px) {
+    .film {
+        width: 100%;
+    }
+}
+#description1, #description2, #description3, .film div[id^="description"] {
+    font-size: 1.5vw;
     color: white;
     text-align: center;
     padding: 10px;
     font-style: bold;
-    
+}
+
+
+
+#nomfilm1, #nomfilm2, #nomfilm3, .film div[id^="nomfilm"] {
+    font-size: 1.9vw;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-style: bold;
 }
 footer {
     background-color: #222;
@@ -111,9 +130,11 @@ footer {
     margin-top: 20px;
 }
 
-#poster1, #poster2, #poster3 {
+#poster1, #poster2, #poster3, .film div[id^="poster"] {
     width: 100%;
-    height: 90%;
+    height: 500px;
     background-size: cover;
     background-position: center;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
 }
