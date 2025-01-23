@@ -49,7 +49,7 @@ function searchMovies(query, page) {
 
                     nomFilmDiv.innerHTML = `<a href="movie.html?id=${movie.imdbID}">${movie.Title}</a>`;
                     descriptionDiv.innerHTML = movie.Year;
-                    posterDiv.style.backgroundImage = `url(${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/100"})`;
+                    posterDiv.innerHTML = `<a href="movie.html?id=${movie.imdbID}"><div style="background-image: url(${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/100"}); width: 100%; height: 100%; background-size: cover; background-position: center;"></div></a>`;
 
                     movieDiv.appendChild(nomFilmDiv);
                     movieDiv.appendChild(posterDiv);

@@ -6,14 +6,13 @@ function afficherfilm(filmId, nomFilmDiv, posterDiv, descriptionDiv) {
             
             nomFilmDiv.innerHTML = `<a href="movie.html?id=${filmId}">${data.Title}</a>`;
             descriptionDiv.innerHTML = data.Plot;
-            posterDiv.style.backgroundImage = `url(${posterFilm !== "N/A" ? posterFilm : "https://via.placeholder.com/100"})`;
+            posterDiv.innerHTML = `<a href="movie.html?id=${filmId}"><div style="background-image: url(${posterFilm !== "N/A" ? posterFilm : "https://via.placeholder.com/100"}); width: 100%; height: 100%; background-size: cover; background-position: center;"></div></a>`;
         })
         .catch(error => {
             console.error("Erreur :", error);
             nomFilmDiv.innerHTML = "Titre non disponible";
             descriptionDiv.innerHTML = "Description non disponible";
-            posterDiv.style.backgroundImage = `url('https://via.placeholder.com/100')`;
-        });
+            posterDiv.innerHTML = `<a href="movie.html?id=${filmId}"><div style="background-image: url('https://via.placeholder.com/100'); width: 100%; height: 100%; background-size: cover; background-position: center;"></div></a>`;        });
 }
 
 afficherfilm("tt5040012", document.getElementById("nomfilm1"), document.getElementById("poster1"), document.getElementById("description1"));

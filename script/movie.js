@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById("film-genre").innerHTML = `<p><strong>Genre:</strong> ${data.Genre}</p>`;
                     document.getElementById("film-actors").innerHTML = `<p><strong>Acteurs:</strong> ${data.Actors}</p>`;
                     
-                    // bonus: notes obtenues par le film
+                    
                     const ratings = data.Ratings.map(rating => `<p>${rating.Source}: ${rating.Value}</p>`).join("");
                     document.getElementById("film-ratings").innerHTML = `<div><strong>Notes:</strong> ${ratings}</div>`;
                     
-                    // bonus: date de sortie en DVD formatée en français
+                    
                     if (data.DVD !== "N/A") {
                         const dvdDate = new Date(data.DVD);
                         const formattedDate = dvdDate.toLocaleDateString('fr-FR', {
