@@ -16,7 +16,6 @@ function searchMovies(query, page) {
     const apiKey = "2cfb4a90"; 
     const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}&page=${page}`;
 
-    
     const resultsDiv = document.getElementById("results");
     if (page === 1) {
         resultsDiv.innerHTML = "";
@@ -27,7 +26,6 @@ function searchMovies(query, page) {
         return;
     }
 
-   
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -60,7 +58,6 @@ function searchMovies(query, page) {
                     resultsDiv.appendChild(movieDiv);
                 });
 
-               
                 if (data.totalResults > currentPage * 10) {
                     document.getElementById("load-more-button").style.display = "block";
                 } else {

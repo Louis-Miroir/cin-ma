@@ -36,9 +36,10 @@ function ajouterFilm() {
         const posterDiv = document.createElement('div');
         const descriptionDiv = document.createElement('div');
 
-        nomFilmDiv.classList.add('nomfilm');
-        posterDiv.classList.add('poster');
-        descriptionDiv.classList.add('description');
+        
+        nomFilmDiv.id = 'nomfilm';
+        posterDiv.id = 'poster';
+        descriptionDiv.id = 'description';
 
         filmDiv.appendChild(nomFilmDiv);
         filmDiv.appendChild(posterDiv);
