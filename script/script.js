@@ -1,18 +1,24 @@
-function afficherfilm(filmId, film, poster,description) {
-    fetch(` http://www.omdbapi.com/?i=${filmId}&apikey=2cfb4a90`)
+function afficherfilm(filmId, nomFilmDiv, posterDiv, descriptionDiv) {
+    fetch(`http://www.omdbapi.com/?i=${filmId}&apikey=2cfb4a90`)
         .then(response => response.json())
         .then(data => {
             const posterFilm = data.Poster;
             
-            document.getElementById(film).innerHTML = `<a href="movie.html?id=${filmId}">${data.Title}</a>`;
-            document.getElementById(description).innerHTML = data.Plot;
-            document.getElementById(poster).style.backgroundImage = `url(${posterFilm})`;
+            nomFilmDiv.innerHTML = `<a href="movie.html?id=${filmId}">${data.Title}</a>`;
+            descriptionDiv.innerHTML = data.Plot;
+            posterDiv.style.backgroundImage = `url(${posterFilm !== "N/A" ? posterFilm : "https://via.placeholder.com/100"})`;
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+            nomFilmDiv.innerHTML = "Titre non disponible";
+            descriptionDiv.innerHTML = "Description non disponible";
+            posterDiv.style.backgroundImage = `url('https://via.placeholder.com/100')`;
         });
 }
 
-afficherfilm("tt5040012", "nomfilm1", "poster1", "description1");
-afficherfilm("tt1262426", "nomfilm2", "poster2", "description2");
-afficherfilm("tt18259086", "nomfilm3", "poster3", "description3");
+afficherfilm("tt5040012", document.getElementById("nomfilm1"), document.getElementById("poster1"), document.getElementById("description1"));
+afficherfilm("tt1262426", document.getElementById("nomfilm2"), document.getElementById("poster2"), document.getElementById("description2"));
+afficherfilm("tt18259086", document.getElementById("nomfilm3"), document.getElementById("poster3"), document.getElementById("description3"));
 
 const liste = ["tt18259086", "tt0387564", "tt18259086", "tt17279496", "tt26753003", "tt26442053"];
 let filmIndex = 3;
@@ -30,13 +36,9 @@ function ajouterFilm() {
         const posterDiv = document.createElement('div');
         const descriptionDiv = document.createElement('div');
 
-        const filmIdStr = `nomfilm${filmIndex}`;
-        const posterIdStr = `poster${filmIndex}`;
-        const descriptionIdStr = `description${filmIndex}`;
-
-        nomFilmDiv.id = filmIdStr;
-        posterDiv.id = posterIdStr;
-        descriptionDiv.id = descriptionIdStr;
+        nomFilmDiv.classList.add('nomfilm');
+        posterDiv.classList.add('poster');
+        descriptionDiv.classList.add('description');
 
         filmDiv.appendChild(nomFilmDiv);
         filmDiv.appendChild(posterDiv);
@@ -44,7 +46,7 @@ function ajouterFilm() {
 
         filmsContainer.appendChild(filmDiv);
 
-        afficherfilm(filmId, filmIdStr, posterIdStr, descriptionIdStr);
+        afficherfilm(filmId, nomFilmDiv, posterDiv, descriptionDiv);
     }
 }
 

@@ -67,7 +67,6 @@ body {
 }
     
 
-
 .films {
     display: flex;
     flex-wrap: wrap;
@@ -82,16 +81,13 @@ body {
 }
 
 .film1,.film2,.film3 {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 400px; 
     margin: 10px;
-    
-
-
 }
+
 .film {
     display: flex;
     flex-direction: column;
@@ -105,7 +101,8 @@ body {
         width: 100%;
     }
 }
-#description1, #description2, #description3, .film div[id^="description"] {
+
+#description1, #description2, #description3, .film .description {
     font-size: 1.5vw;
     color: white;
     text-align: center;
@@ -113,17 +110,15 @@ body {
     font-style: bold;
 }
 
-
-
-#nomfilm1, #nomfilm2, #nomfilm3, .film #nomfilm {
+#nomfilm1, #nomfilm2, #nomfilm3, .film .nomfilm {
     text-decoration: none;     
     font-size: 1.9vw;
     color: white;
     text-align: center;
     padding: 10px;
     font-style: bold;
-   
 }
+
 footer {
     background-color: #222;
     color: white;
@@ -132,7 +127,7 @@ footer {
     margin-top: 20px;
 }
 
-#poster1, #poster2, #poster3, .film div[id^="poster"] {
+#poster1, #poster2, #poster3, .film .poster {
     width: 100%;
     height: 500px;
     background-size: cover;
@@ -149,7 +144,6 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     margin-left: 40%;
-
 }
 
 #search-input {
@@ -179,4 +173,13 @@ footer {
 a {
     color: white;
     text-decoration: none;
+}
+
+.film-poster {
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
 }

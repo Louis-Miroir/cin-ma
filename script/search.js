@@ -41,9 +41,9 @@ function searchMovies(query, page) {
                     const posterDiv = document.createElement("div");
                     const descriptionDiv = document.createElement("div");
 
-                    const filmIdStr = `nomfilm${filmIndex}`;
-                    const posterIdStr = `poster${filmIndex}`;
-                    const descriptionIdStr = `description${filmIndex}`;
+                    const filmIdStr = `nomfilm`;
+                    const posterIdStr = `poster`;
+                    const descriptionIdStr = `description`;
 
                     nomFilmDiv.id = filmIdStr;
                     posterDiv.id = posterIdStr;
