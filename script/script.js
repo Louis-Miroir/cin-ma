@@ -4,7 +4,7 @@ function afficherfilm(filmId, film, poster,description) {
         .then(data => {
             const posterFilm = data.Poster;
             
-            document.getElementById(film).innerHTML = data.Title;
+            document.getElementById(film).innerHTML = `<a href="movie.html?id=${filmId}">${data.Title}</a>`;
             document.getElementById(description).innerHTML = data.Plot;
             document.getElementById(poster).style.backgroundImage = `url(${posterFilm})`;
         });

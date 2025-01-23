@@ -116,11 +116,13 @@ body {
 
 
 #nomfilm1, #nomfilm2, #nomfilm3, .film div[id^="nomfilm"] {
+    text-decoration: none;     
     font-size: 1.9vw;
     color: white;
     text-align: center;
     padding: 10px;
     font-style: bold;
+   
 }
 footer {
     background-color: #222;
@@ -156,4 +158,20 @@ footer {
     border: 1px solid #ccc;
     width: 300px;
     margin-left: 40%;
+}
+
+.film-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.film-title, .film-plot, .film-genre, .film-actors, .film-ratings, .film-dvd {
+    margin-bottom: 20px;
+    text-align: center;
 }
