@@ -143,7 +143,13 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 40%;
+    
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 #search-input {
