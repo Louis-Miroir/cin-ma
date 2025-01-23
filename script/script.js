@@ -10,8 +10,8 @@ function afficherfilm(filmId, film, poster,description) {
         });
 }
 
-afficherfilm("tt18259086", "nomfilm1", "poster1", "description1");
-afficherfilm("tt0387564", "nomfilm2", "poster2", "description2");
+afficherfilm("tt5040012", "nomfilm1", "poster1", "description1");
+afficherfilm("tt1262426", "nomfilm2", "poster2", "description2");
 afficherfilm("tt18259086", "nomfilm3", "poster3", "description3");
 
 const liste = ["tt18259086", "tt0387564", "tt18259086", "tt17279496", "tt26753003", "tt26442053"];
