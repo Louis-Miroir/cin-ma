@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const apiKey = "2cfb4a90";
 
     if (filmId) {
-        fetch(`https://www.omdbapi.com/?i=${filmId}&apikey=${apiKey}`)
+        fetch(`https://www.omdbapi.com/?i=${filmId}&apikey=${apiKey}&plot=full`)
             .then(response => response.json())
             .then(data => {
                 if (data.Response === "True") {
@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById("film-genre").innerHTML = `<p><strong>Genre:</strong> ${data.Genre}</p>`;
                     document.getElementById("film-actors").innerHTML = `<p><strong>Acteurs:</strong> ${data.Actors}</p>`;
                     
-                    // Bonus: notes obtenues par le film
+                    // bonus: notes obtenues par le film
                     const ratings = data.Ratings.map(rating => `<p>${rating.Source}: ${rating.Value}</p>`).join("");
                     document.getElementById("film-ratings").innerHTML = `<div><strong>Notes:</strong> ${ratings}</div>`;
                     
-                    // Bonus: date de sortie en DVD formatée en français
+                    // bonus: date de sortie en DVD formatée en français
                     if (data.DVD !== "N/A") {
                         const dvdDate = new Date(data.DVD);
                         const formattedDate = dvdDate.toLocaleDateString('fr-FR', {

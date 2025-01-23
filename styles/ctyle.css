@@ -115,7 +115,7 @@ body {
 
 
 
-#nomfilm1, #nomfilm2, #nomfilm3, .film div[id^="nomfilm"] {
+#nomfilm1, #nomfilm2, #nomfilm3, .film #nomfilm {
     text-decoration: none;     
     font-size: 1.9vw;
     color: white;
@@ -174,4 +174,9 @@ footer {
 .film-title, .film-plot, .film-genre, .film-actors, .film-ratings, .film-dvd {
     margin-bottom: 20px;
     text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
